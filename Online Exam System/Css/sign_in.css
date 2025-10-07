@@ -1,0 +1,70 @@
+body {
+  background: linear-gradient(135deg, #00263b, #004d40);
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Glassmorphism Signin Box */
+#signin-container {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#signin-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 40px rgba(7, 149, 109, 0.574);
+}
+
+.icon {
+  font-size: 2rem;
+  color: #ffd60a;
+  margin-bottom: 10px;
+}
+
+ h2 {
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.form-label {
+  font-weight: 500;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.3);
+}
+
+.btn-custom {
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(90deg, #0077b6, #5a189a);
+  transform: scale(1.03);
+}
+a.text-warning:hover {
+  color: #fff !important;
+}

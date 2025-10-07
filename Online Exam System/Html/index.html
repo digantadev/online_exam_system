@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExamPortal - Online Exam Made Easy</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="/Css/1.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="/javascript/1.js"></script>
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #00263b, #004d40);
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Navbar - solid color (not transparent) */
+      .navbar {
+        background-color: #00343f !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Navbar brand */
+      .navbar-brand {
+        font-weight: 700;
+        color: #00e0ff !important;
+        font-size: 1.8rem;
+      }
+
+      /* Nav links */
+      .nav-link {
+        color: white !important;
+        transition: 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #00e0ff !important;
+      }
+
+      /* Remove signup/signin box background */
+      .navbar nav {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+
+      /* Optional: make the buttons blend naturally with the navbar */
+      .navbar .btn {
+        border-width: 2px;
+        transition: 0.3s;
+      }
+
+      .hero-text span#element {
+        color: #00e676;
+        text-shadow: 0 0 15px #00ff88;
+      }
+
+      .carousel img {
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      }
+
+      /* Feature Cards */
+      .feature-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 15px;
+        padding: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+      }
+
+      footer {
+        background-color: #012a33;
+      }
+
+      .scroll-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #00e0ff;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.8rem;
+        padding: 10px;
+        transition: 0.3s;
+      }
+
+      .scroll-btn:hover {
+        background-color: #00bcd4;
+        transform: scale(1.1);
+      }
+      .signup-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 35px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 40px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+
+      .signup-box p {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+
+      .signup-box a {
+        margin-top: 10px;
+      }
+      .signup-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container" id="nav">
+        <a class="navbar-brand" href="#">ExamPortal</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="features.php">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ContactDev">Contact Developer</a>
+            </li>
+          </ul>
+
+          <nav>
+            <a
+              class="btn btn-outline-info rounded-pill px-4 me-2"
+              href="Sign_in.html"
+              >Sign In</a
+            >
+            <a
+              class="btn btn-outline-warning rounded-pill px-4"
+              href="Sign_up.html"
+              >Sign Up</a
+            >
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-text">
+          <h1 class="fw-bold mb-3" style="font-size: 3rem">
+            Turn your <span id="element"></span><br />
+            into success story 🌟
+          </h1>
+
+          <p class="fs-5 text-light">
+            A powerful and secure online exam system for teachers and students —
+            simplifying quizzes, CTs, and lab exams like never before.
+          </p>
+          <a href="Sign_up.html" class="btn btn-success rounded-pill px-4 mt-3"
+            >Get Started</a
+          >
+          <div class="signup-box mt-5">
+            <p>Don't have an account yet?</p>
+            <p><strong>Sign up — it's completely free!</strong></p>
+            <a href="Sign_up.html" class="btn btn-warning rounded-pill px-4"
+              >Sign Up Now</a
+            >
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide shadow-lg"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active">
+                <img
+                  src="/images/teacher_dashboard.png"
+                  class="d-block w-100"
+                  alt="Teacher Dashboard"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/Student_dashboard.png"
+                  class="d-block w-100"
+                  alt="Student Dashboard"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/Create_exam .png"
+                  class="d-block w-100"
+                  alt="Create Exam"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/Mcq.png"
+                  class="d-block w-100"
+                  alt="Create Exam"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/ct.png"
+                  class="d-block w-100"
+                  alt="Create Exam"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/images/lab.png"
+                  class="d-block w-100"
+                  alt="Create Exam"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-5 bg-dark text-center">
+      <div class="container">
+        <h2 class="mb-5 text-info">Why Choose ExamPortal?</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <i class="bi bi-shield-lock fs-1 text-info mb-3"></i>
+              <h4>Secure Platform</h4>
+              <p>
+                Ensures integrity in every exam with strong authentication and
+                monitoring.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <i class="bi bi-speedometer2 fs-1 text-info mb-3"></i>
+              <h4>Instant Evaluation</h4>
+              <p>
+                Automatic result generation and analytics for faster
+                decision-making.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <i class="bi bi-people fs-1 text-info mb-3"></i>
+              <h4>Easy for Everyone</h4>
+              <p>
+                Simple design suitable for teachers, students, and institutes
+                alike.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE HIGHLIGHTS -->
+    <section class="py-5 text-center">
+      <div class="container">
+        <h2 class="text-warning mb-5">Feature Highlights</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <img
+              src="/images/ct.png"
+              class="img-fluid rounded shadow"
+              alt="CT Exam"
+            />
+            <p class="mt-2">Conduct CT Exams Effortlessly</p>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="/images/lab.png"
+              class="img-fluid rounded shadow"
+              alt="Lab Exam"
+            />
+            <p class="mt-2">Lab Exam with Code Submission</p>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="/images/Mcq.png"
+              class="img-fluid rounded shadow"
+              alt="MCQ Exam"
+            />
+            <p class="mt-2">MCQ Exam with Auto Scoring</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIALS -->
+    <section class="py-5 bg-secondary text-light" id="testimonials">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-5 text-warning">What Our Users Say</h2>
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner" id="testimonialContainer">
+            <!-- Default testimonials -->
+            <div class="carousel-item active">
+              <div class="testimonial mx-auto" style="max-width: 700px">
+                <p>
+                  “ExamPortal has made online testing incredibly easy and
+                  secure. Our teachers love how fast evaluations are now!”
+                </p>
+                <h6 class="fw-bold mt-3">— Principal, Greenfield High</h6>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial mx-auto" style="max-width: 700px">
+                <p>
+                  “The best platform for conducting lab exams remotely. The
+                  evaluation tools are top-notch!”
+                </p>
+                <h6 class="fw-bold mt-3">— Prof. Ananya Roy</h6>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial mx-auto" style="max-width: 700px">
+                <p>
+                  “As a student, I love the simplicity and how instant the quiz
+                  results are. Highly recommended!”
+                </p>
+                <h6 class="fw-bold mt-3">— Rafiq, 3rd-year Student</h6>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT DEVELOPER -->
+    <footer class="text-light py-4" id="ContactDev">
+      <div class="container text-center">
+        <h2>Contact Developer</h2>
+        <form class="mt-4" onsubmit="sendmail(); return false;">
+          <div class="row g-3 justify-content-center">
+            <div class="col-md-3">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="col-md-3">
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="col-md-3">
+              <input
+                type="text"
+                id="subject"
+                class="form-control"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="col-md-9 mt-3">
+              <textarea
+                id="message"
+                class="form-control"
+                rows="3"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+            <div class="col-md-9 mt-3">
+              <button type="submit" class="btn btn-info px-5">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="mt-5">
+          <p>© 2025 Online Exam System | Developed by Diganta Das Niloy</p>
+          <div>
+            <a class="text-light me-3 fs-5" href="https://github.com/digantadev"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a
+              class="text-light me-3 fs-5"
+              href="https://www.linkedin.com/in/diganta-das-niloy"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a
+              class="text-light fs-5"
+              href="https://www.facebook.com/share/18zQ9qr8PY/"
+              ><i class="bi bi-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Button -->
+    <a href="#nav" class="scroll-btn"
+      ><i class="bi bi-arrow-up-circle-fill"></i
+    ></a>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "tests",
+          "exams",
+          "assessments",
+          "quizzes",
+          "mock tests",
+          "challenges",
+        ],
+        typeSpeed: 70,
+        backSpeed: 50,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
